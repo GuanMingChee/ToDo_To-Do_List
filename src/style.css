@@ -1,0 +1,62 @@
+:root {
+  background-color: rgb(101, 5, 255);
+}
+
+nav {
+  background-color: darkgoldenrod;
+  display: flex;
+  border-radius: 1rem;
+  outline: 1rem solid darkgoldenrod;
+  font-weight: bolder;
+  font-size: larger;
+  padding: 1rem;
+  align-content: center;
+}
+
+.nav-btn {
+  margin-left: auto;
+  font-size: large;
+}
+
+#add-project,#display-project,button {
+  background-color: red;
+  margin-left:1rem;
+}
+
+#add-project:hover,
+#display-project:hover,
+button:hover {
+  font-weight: bolder;
+  cursor:grab;
+  background-color: rgb(246, 71, 71);
+}
+
+#add-project:active,
+#display-project:active,
+button:active {
+  cursor: grabbing;
+  background-color: rgb(155, 0, 0);
+}
+
+.displayProjectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.displayIndividualProject {
+  display:flex;
+  flex-direction: column;
+  outline: 5px solid azure ;
+  background-color: rgb(172, 172, 172);
+  height: 20rem;
+  width: 20rem;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  display: flex;
+  margin: .5rem;
+}
