@@ -14,7 +14,7 @@ function storeToLocalT(){
     localStorage.setItem("arrT",JSON.stringify(arrT))
 }
 
-function createProject(title, description, dueDate, priority,done=false){
+function createProject(title, description, dueDate, priority,done){
     let id=crypto.randomUUID();
     let list_id=[];
     let p={id,title,description,dueDate,priority,done,list_id};
@@ -23,7 +23,7 @@ function createProject(title, description, dueDate, priority,done=false){
     return id;
 }
 
-function createToDoList(pid,title, description, dueDate, priority,done=false){
+function createToDoList(pid,title, description, dueDate, priority,done){
     let id=crypto.randomUUID();
     let t={id,title,description,dueDate,priority,done};
     arrT.push(t);
@@ -49,7 +49,28 @@ function getListByProjectID(id){
     return tmp_arr;
 }
 
-let p=createProject("xxx","ddd","wgryh","ergergr")
-createToDoList(p,"xxx","ddd","wgryh","ergergr")
+function deleteListByListID(tid,pid){
+    arrT=arrT.filter(t=>t.id!==tid);
+    let target=arrP.find(p=>p.id===pid);
+    target.list_id=target.list_id.filter(p=>p!==tid);
+    storeToLocalT();
+    storeToLocalP();
+
+}
+
+function deleteProjectByProjectID(pid){
+    let target=arrP.findIndex(p=>p.id===pid);
+    let toDelete=arrP[target];
+    if (toDelete.list_id.length===0){
+        arrP.splice(target,1);
+    }
+    else{
+        console.log("ToDo List not empty")
+    }
+    storeToLocalP();
+}
+
+//let p=createProject("xxx","ddd","wgryh","ergergr")
+//createToDoList(p,"xxx","ddd","wgryh","ergergr")
 getAllProjects()
-export {getAllProjects,getListByProjectID}
+export {getAllProjects,getListByProjectID,deleteListByListID,deleteProjectByProjectID,createProject}

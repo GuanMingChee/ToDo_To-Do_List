@@ -38,14 +38,14 @@ button:active {
   background-color: rgb(155, 0, 0);
 }
 
-.displayProjectContainer {
+.displayProjectContainer,.displayTodoListContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px;
 }
 
-.displayIndividualProject {
+.displayIndividualProject,.displayIndividualTodoList {
   display:flex;
   flex-direction: column;
   outline: 5px solid azure ;
@@ -59,4 +59,47 @@ button:active {
 p {
   display: flex;
   margin: .5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.title {
+  width: 100%;
+  color: aliceblue;
+  font-size: 3rem;
+  display: flex;
+}
+
+.newProject {
+  background-color: rgb(62, 61, 61,0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-class {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(247, 182, 62);
+  
+  gap: 1rem;
+}
+
+input {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.form-button-class {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
 }
